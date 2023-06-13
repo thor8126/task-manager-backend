@@ -85,6 +85,7 @@ app.delete('/api/tasks/:id', (req, res) => {
     .catch((err) => res.status(400).json({ error: err.message }));
 });
 
+module.exports = app;
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
