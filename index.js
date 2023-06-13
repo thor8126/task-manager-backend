@@ -20,6 +20,11 @@ mongoose.connect(uri, {
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.log(err));
 
+// Routes
+
+app.get('/', (req, res) => {
+  res.send('Api by Lakhvinder Singh!')
+})
     
 app.get('/ping', (req, res) => {
   res.send('Pong')
