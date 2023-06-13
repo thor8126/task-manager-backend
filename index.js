@@ -38,11 +38,10 @@ app.get('/api/tasks', (req, res) => {
 
 // Create a new task
 app.post('/api/tasks', (req, res) => {
-  const { title, description, status } = req.body;
+  const { title, status } = req.body;
 
   const task = new Task({
     title,
-    description,
     status,
   });
 
@@ -55,11 +54,11 @@ app.post('/api/tasks', (req, res) => {
 // Update a task
 app.put('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
-  const { title, description, status } = req.body;
+  const { title, status } = req.body;
 
   Task.findByIdAndUpdate(
     id,
-    { title, description, status },
+    { title, status },
     { new: true, runValidators: true }
   )
     .then((updatedTask) => {
